@@ -21,3 +21,4 @@ const rootReducer = (state = initialState, action) => {
 
 // создаем и экспортируем стор, передаем ему основной, корневой редюсер
 export const store = createStore(rootReducer);
+// Чтобы у приложения был доступ к store, в index.js оборачиваем App в Provider и передаем ему стор в атрибуте store
