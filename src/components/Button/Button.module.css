@@ -7,19 +7,22 @@
     cursor: pointer;
     background-color: #e2e5e8;
     color: inherit;
+
+    transition: background-color 250ms ease-in,
+    color 250ms ease-in;
   }
   
   .btn.isSelected {
-    background-color: #1976d2;
+    background-color: var(--active-color);
     color: #fff;
   }
   
   .btn:hover {
-    background-color: #1976d2;
+    background-color: var(--active-color);
     color: #fff;
   }
   
   .btn:active {
-    background-color: #1565c0;
+    background-color: var(--active-color);
     color: #fff;
   }
