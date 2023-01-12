@@ -1,4 +1,5 @@
 import { statusFilters } from "./constants";
+import { addTask, deleteTask, toggleCompleted } from "./actions";
 
 // Редюсер (reducer) - это функция, которая принимает текущее состояние 
 // и экшен в качестве аргументов и возвращает новое состояние. 
@@ -23,11 +24,11 @@ const filtersInitialState = {
 export const tasksReducer = (state = tasksInitialState, action) => {
     switch (action.type) {
     // В зависимости от типа экшена будет выполняться разная логика
-      case "tasks/addTask":
+      case addTask.type:
         return [...state, action.payload];
-      case "tasks/deleteTask":
+      case deleteTask.type:
         return state.filter(task => task.id !== action.payload);
-      case "tasks/toggleCompleted":
+      case toggleCompleted.type:
         return state.map(task => {
           if (task.id !== action.payload) {
             return task;
