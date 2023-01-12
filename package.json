@@ -1,8 +1,8 @@
 {
-  "name": "react-task-manager",
+  "name": "redux-toolkit-task-manager",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://supermacchan.github.io/react-task-manager/",
+  "homepage": "https://supermacchan.github.io/redux-toolkit-task-manager/",
   "dependencies": {
     "@redux-devtools/extension": "^3.2.4",
     "@testing-library/jest-dom": "^5.16.3",
