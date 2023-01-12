@@ -1,5 +1,5 @@
 import { statusFilters } from "./constants";
-import { addTask, deleteTask, toggleCompleted } from "./actions";
+import { addTask, deleteTask, toggleCompleted, setStatusFilter } from "./actions";
 
 // Редюсер (reducer) - это функция, которая принимает текущее состояние 
 // и экшен в качестве аргументов и возвращает новое состояние. 
@@ -44,7 +44,7 @@ export const tasksReducer = (state = tasksInitialState, action) => {
 // Теперь значением параметра state будет объект фильтров
 export const filtersReducer = (state = filtersInitialState, action) => {
     switch (action.type) {
-      case "filters/setStatusFilter":
+      case setStatusFilter.type:
         return {
           ...state,
           status: action.payload,
