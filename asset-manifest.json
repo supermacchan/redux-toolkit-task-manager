@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/redux-toolkit-task-manager/static/css/main.5763847e.css",
-    "main.js": "/redux-toolkit-task-manager/static/js/main.7125c9d6.js",
+    "main.js": "/redux-toolkit-task-manager/static/js/main.df86dcc5.js",
     "index.html": "/redux-toolkit-task-manager/index.html",
     "main.5763847e.css.map": "/redux-toolkit-task-manager/static/css/main.5763847e.css.map",
-    "main.7125c9d6.js.map": "/redux-toolkit-task-manager/static/js/main.7125c9d6.js.map"
+    "main.df86dcc5.js.map": "/redux-toolkit-task-manager/static/js/main.df86dcc5.js.map"
   },
   "entrypoints": [
     "static/css/main.5763847e.css",
-    "static/js/main.7125c9d6.js"
+    "static/js/main.df86dcc5.js"
   ]
 }
