@@ -1,27 +1,39 @@
+import { nanoid } from "nanoid";
+
 // Добавить новую задачу с текстом, введенным пользователем
-export const addTask = {
-    type: "tasks/addTask",
-    payload: {
-        id: "generated id",
-        text: "entered text",
-        completed: false,
-    }
+export const addTask = text => {
+    return {
+        type: "tasks/addTask",
+        payload: {
+            id: nanoid(),
+            text,
+            completed: false,
+        },
+    };
 };
 
 // Удалить задачу
-export const deleteTask = {
-    type: "tasks/deleteTask",
-    payload: "task id",
+export const deleteTask = id => {
+    return {
+        type: "tasks/deleteTask",
+        payload: id,
+    };
 };
 
 // Переключить статус задачи
-export const toggleCompleted = {
-    type: "tasks/toggleCompleted",
-    payload: "task id",
+export const toggleCompleted = id => {
+    return {
+        type: "tasks/toggleCompleted",
+        payload: id,
+    };
 };
 
 // Изменить значение фильтра статуса
-export const setStatusFilter = {
-    type: "filters/setStatusFilter",
-    payload: "filter value",
-}
+export const setStatusFilter = value => {
+    return {
+        type: "filters/setStatusFilter",
+        payload: value,
+    };
+};
+
+// Отправка экшенов происходит через dispatch (хук useDispatch())
