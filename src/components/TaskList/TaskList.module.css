@@ -1,9 +1,10 @@
 .list {
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     list-style: none;
 
     background-color: white;
+    border-radius: 3px;
   }
   
   .listItem + .listItem {
