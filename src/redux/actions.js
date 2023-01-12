@@ -1,3 +1,5 @@
+// не используется, т.к. создали слайс
+
 import { createAction, nanoid } from "@reduxjs/toolkit";
 
 export const addTask = createAction("tasks/addTask", text => {

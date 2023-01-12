@@ -1,3 +1,5 @@
+// не используется, т.к. создали слайс
+
 import { createReducer } from "@reduxjs/toolkit";
 import { statusFilters } from "./constants";
 import { addTask, deleteTask, toggleCompleted, setStatusFilter } from "./actions";
