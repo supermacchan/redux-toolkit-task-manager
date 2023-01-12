@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/redux-toolkit-task-manager/static/css/main.5763847e.css",
+    "main.js": "/redux-toolkit-task-manager/static/js/main.1d7207de.js",
+    "index.html": "/redux-toolkit-task-manager/index.html",
+    "main.5763847e.css.map": "/redux-toolkit-task-manager/static/css/main.5763847e.css.map",
+    "main.1d7207de.js.map": "/redux-toolkit-task-manager/static/js/main.1d7207de.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5763847e.css",
+    "static/js/main.1d7207de.js"
+  ]
+}
