@@ -1,22 +1,9 @@
-// const appState = {
-//     tasks: [
-//       { id: 0, text: "Learn HTML and CSS", completed: true },
-//       { id: 1, text: "Get good at JavaScript", completed: true },
-//       { id: 2, text: "Master React", completed: false },
-//       { id: 3, text: "Discover Redux", completed: false },
-//       { id: 4, text: "Build amazing apps", completed: false },
-//     ],
-//     filters: {
-//       status: "all",
-//     },
-//   };
+import { statusFilters } from "./constants";
 
 // Редюсер (reducer) - это функция, которая принимает текущее состояние 
 // и экшен в качестве аргументов и возвращает новое состояние. 
 // Редюсер определяет, как изменяется состояние приложения 
 // в ответ на экшены, отправленные в стор. 
-
-import { statusFilters } from "./constants";
 
 // начальное значение state приложения
 const initialState = {
@@ -28,7 +15,7 @@ const initialState = {
         { id: 4, text: "Build amazing apps", completed: false },
       ],
       filters: {
-        status: "all",
+        status: statusFilters.all,
       },
 };
 
@@ -50,10 +37,40 @@ export const rootReducer = (state = initialState, action) => {
           ],
         };
     }
+
+    case "tasks/deleteTask":
+      return {
+        ...state,
+        tasks: state.tasks.filter(task => task.id !== action.payload),
+    };
+
+    case "tasks/toggleCompleted":
+      return {
+        ...state,
+        tasks: state.tasks.map(task => {
+          if (task.id !== action.payload) {
+            return task;
+          }
+          return {
+            ...task,
+            completed: !task.completed,
+          };
+        }),
+    };
+
+    case "filters/setStatusFilter":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          status: action.payload,
+        },
+      };
+      
     default:
       // Каждый редюсер получает все экшены отправленные в стор.
       // Если редюсер не должен обрабатывать какой-то тип экшена,
       // необходимо вернуть существующее состояние без изменений.
-    return state;
+        return state;
   }
 };
