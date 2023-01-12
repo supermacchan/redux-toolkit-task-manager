@@ -21,7 +21,8 @@
     border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
-    color: #f44336;
+    color: brown;
+    transition: background-color 250ms ease;
   }
   
   .btn:hover {
