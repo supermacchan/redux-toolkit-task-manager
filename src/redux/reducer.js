@@ -20,7 +20,7 @@ const filtersInitialState = {
 
 // Отвечает только за обновление свойства tasks
 // Теперь значением параметра state будет массив задач
-const tasksReducer = (state = tasksInitialState, action) => {
+export const tasksReducer = (state = tasksInitialState, action) => {
     switch (action.type) {
     // В зависимости от типа экшена будет выполняться разная логика
       case "tasks/addTask":
@@ -41,7 +41,7 @@ const tasksReducer = (state = tasksInitialState, action) => {
 
 // Отвечает только за обновление свойства filters
 // Теперь значением параметра state будет объект фильтров
-const filtersReducer = (state = filtersInitialState, action) => {
+export const filtersReducer = (state = filtersInitialState, action) => {
     switch (action.type) {
       case "filters/setStatusFilter":
         return {
@@ -51,13 +51,4 @@ const filtersReducer = (state = filtersInitialState, action) => {
       default:
         return state;
     }
-};
-
-export const rootReducer = (state = {}, action) => {
-    // Возвращаем объект состояния
-    return {
-      // Обоим редюсерам передаем только часть состояния за которую они отвечают
-      tasks: tasksReducer(state.tasks, action),
-      filters: filtersReducer(state.filters, action),
-    };
 };
