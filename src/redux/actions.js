@@ -1,39 +1,9 @@
-import { nanoid } from "nanoid";
+import { createAction } from "@reduxjs/toolkit";
 
-// Добавить новую задачу с текстом, введенным пользователем
-export const addTask = text => {
-    return {
-        type: "tasks/addTask",
-        payload: {
-            id: nanoid(),
-            text,
-            completed: false,
-        },
-    };
-};
+export const addTask = createAction("tasks/addTask");
 
-// Удалить задачу
-export const deleteTask = id => {
-    return {
-        type: "tasks/deleteTask",
-        payload: id,
-    };
-};
+export const deleteTask = createAction("tasks/deleteTask");
 
-// Переключить статус задачи
-export const toggleCompleted = id => {
-    return {
-        type: "tasks/toggleCompleted",
-        payload: id,
-    };
-};
+export const toggleCompleted = createAction("tasks/toggleCompleted");
 
-// Изменить значение фильтра статуса
-export const setStatusFilter = value => {
-    return {
-        type: "filters/setStatusFilter",
-        payload: value,
-    };
-};
-
-// Отправка экшенов происходит через dispatch (хук useDispatch())
+export const setStatusFilter = createAction("filters/setStatusFilter");
