@@ -1,12 +1,7 @@
+import { createReducer } from "@reduxjs/toolkit";
 import { statusFilters } from "./constants";
 import { addTask, deleteTask, toggleCompleted, setStatusFilter } from "./actions";
 
-// Редюсер (reducer) - это функция, которая принимает текущее состояние 
-// и экшен в качестве аргументов и возвращает новое состояние. 
-// Редюсер определяет, как изменяется состояние приложения 
-// в ответ на экшены, отправленные в стор. 
-
-// начальное значение state приложения
 const tasksInitialState = [
     { id: 0, text: "Learn HTML and CSS", completed: true },
     { id: 1, text: "Get good at JavaScript", completed: true },
@@ -19,37 +14,30 @@ const filtersInitialState = {
     status: statusFilters.all,
 };
 
-// Отвечает только за обновление свойства tasks
-// Теперь значением параметра state будет массив задач
-export const tasksReducer = (state = tasksInitialState, action) => {
-    switch (action.type) {
-    // В зависимости от типа экшена будет выполняться разная логика
-      case addTask.type:
-        return [...state, action.payload];
-      case deleteTask.type:
-        return state.filter(task => task.id !== action.payload);
-      case toggleCompleted.type:
-        return state.map(task => {
-          if (task.id !== action.payload) {
-            return task;
-          }
-          return { ...task, completed: !task.completed };
-        });
-      default:
-        return state;
-    }
-};
+export const tasksReducer = createReducer(tasksInitialState, {
+  [addTask]: (state, action) => {
+    return [...state, action.payload];
+  },
 
-// Отвечает только за обновление свойства filters
-// Теперь значением параметра state будет объект фильтров
-export const filtersReducer = (state = filtersInitialState, action) => {
-    switch (action.type) {
-      case setStatusFilter.type:
-        return {
-          ...state,
-          status: action.payload,
-        };
-      default:
-        return state;
-    }
-};
+  [deleteTask]: (state, action) => {
+    return state.filter(task => task.id !== action.payload);
+  },
+
+  [toggleCompleted]: (state, action) => {
+    return state.map(task => {
+      if (task.id !== action.payload) {
+        return task;
+      }
+      return { ...task, completed: !task.completed };
+    });
+  },
+});
+
+export const filtersReducer = createReducer(filtersInitialState, {
+  [setStatusFilter]: (state, action) => {
+    return {
+      ...state,
+      status: action.payload,
+    };
+  },
+});
