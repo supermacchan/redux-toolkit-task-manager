@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectTasks } from "redux/selectors";
+import { BsExclamationLg, BsCheckLg } from "react-icons/bs";
 import css from "./TaskCounter.module.css";
 
 export const TaskCounter = () => {
@@ -20,8 +21,8 @@ export const TaskCounter = () => {
 
   return (
     <div>
-      <p className={css.text}>Active: {count.active}</p>
-      <p className={css.text}>Completed: {count.completed}</p>
+      <p className={css.text}><BsExclamationLg className={css.icon}/>Active: {count.active}</p>
+      <p className={css.text}><BsCheckLg className={css.icon}/>Completed: {count.completed}</p>
     </div>
   );
 };
