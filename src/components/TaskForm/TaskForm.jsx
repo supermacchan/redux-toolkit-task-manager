@@ -22,6 +22,7 @@ export const TaskForm = () => {
         type="text"
         name="text"
         placeholder="Enter task text..."
+        required
       />
       <Button type="submit">Add task</Button>
     </form>
