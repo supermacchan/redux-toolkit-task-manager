@@ -10,5 +10,5 @@
   }
   
   .field:focus {
-    outline-color: #1976d2;
+    outline-color: var(--active-color);
   }
