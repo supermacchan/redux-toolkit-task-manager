@@ -24,4 +24,6 @@ code {
 
 :root {
   --active-color: #572204;
+  --dark-color: #000;
+  --bright-color: rgb(117, 0, 172);
 }

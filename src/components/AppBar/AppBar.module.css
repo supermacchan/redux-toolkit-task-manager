@@ -19,6 +19,6 @@
     font-size: 22px;
     text-transform: uppercase;
 
-    color: rgb(39, 21, 6);
+    color: var(--dark-color);
   }
   

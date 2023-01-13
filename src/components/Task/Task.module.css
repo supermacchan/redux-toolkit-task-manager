@@ -21,7 +21,7 @@
     border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
-    color: brown;
+    color: var(--bright-color);
     transition: background-color 250ms ease;
   }
   
